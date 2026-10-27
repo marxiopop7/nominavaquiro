@@ -2,12 +2,12 @@ package edu.udistrital.nomina.nominavaquiro.model;
 import java.io.Serializable;
 
 
-public class nomina implements Serializable{
+public class Nomina implements Serializable{
 
 
     private static final long serialVersionUID = 1L;
 
-    private String idCdt; 
+    private String idnomina; 
     private Cliente cliente;
     private double inversion;
     private int plazoDias;
@@ -19,19 +19,19 @@ public class nomina implements Serializable{
     private transient double gananciaNeta;
     private transient double valorTotal;
 
-    public nomina() {
+    public Nomina() {
     }
 
-    public nomina(String idCdt, Cliente cliente, double inversion, int plazoDias, double tasaInteresesAnual) {
-        this.idCdt = idCdt;
+    public Nomina(String idCdt, Cliente cliente, double inversion, int plazoDias, double tasaInteresesAnual) {
+        this.idnomina = idCdt;
         this.cliente = cliente;
         this.inversion = inversion;
         this.plazoDias = plazoDias;
         this.tasaInteresesAnual = tasaInteresesAnual;
-        calcularCDT();
+        calcularnomina();
     }
 
-    public void calcularCDT() {
+    public void calcularnomina() {
         this.gananciaBruta = calcularGananciaBruta();
         this.retencionFuente = calcularRetencionFuente();
         this.gananciaNeta = calcularGananciaNeta();
@@ -54,12 +54,12 @@ public class nomina implements Serializable{
         return inversion + gananciaNeta;
     }
 
-	public String getIdCdt() {
-		return idCdt;
+	public String getIdnomina() {
+		return idnomina;
 	}
 
-	public void setIdCdt(String idCdt) {
-		this.idCdt = idCdt;
+	public void setIdnomina(String idnomina) {
+		this.idnomina = idnomina;
 	}
 
 	public Cliente getCliente() {
